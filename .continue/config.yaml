@@ -1,8 +1,24 @@
-name: Global Continue Config
+name: My Global Continue Config
 version: 1.0.0
 schema: v1
-
 models:
-  - uses: anthropic/claude-3-5-sonnet
-    with:
-      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+  - title: DeepSeek Coder
+    model: deepseek-coder
+    contextLength: 128000
+    apiKey: ${DEEPSEEK_API_KEY}
+    provider: deepseek
+    systemMessage: You are an expert programming assistant
+  - title: DeepSeek Chat
+    model: deepseek-chat
+    contextLength: 128000
+    apiKey: ${DEEPSEEK_API_KEY}
+    provider: deepseek
+  - name: DeepSeek Coder
+    provider: deepseek
+    model: deepseek-coder
+    apiKey: sk-92c7e35f1c474ce896e9304535245af7
+mcpServers:
+  - uses: anthropic/memory-mcp
+ui:
+  fontSize: 14
+  theme: dark
