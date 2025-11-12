@@ -1,0 +1,31 @@
+{
+  "models": [
+    {
+      "title": "DeepSeek Coder",
+      "provider": "openai",
+      "model": "deepseek-coder",
+      "apiKey": "${DEEPSEEK_TOKEN}",
+      "apiBase": "https://api.deepseek.com",
+      "contextLength": 128000
+    }
+  ],
+  "customCommands": [
+    {
+      "name": "analyze-code",
+      "prompt": "Проанализируй данный код и предложи улучшения",
+      "description": "Анализ кода и рефакторинг"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "DeepSeek Coder",
+    "provider": "openai", 
+    "model": "deepseek-coder",
+    "apiKey": "${DEEPSEEK_TOKEN}",
+    "apiBase": "https://api.deepseek.com"
+  },
+  "embeddingsProvider": {
+    "provider": "openai",
+    "apiKey": "${DEEPSEEK_TOKEN}",
+    "apiBase": "https://api.deepseek.com"
+  }
+}
