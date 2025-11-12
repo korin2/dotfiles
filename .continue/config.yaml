@@ -1,0 +1,14 @@
+name: Local Config
+version: 1.0.0
+schema: v1
+models:
+  - name: DeepSeek Coder
+    provider: deepseek
+    model: deepseek-coder
+    # DO NOT store real API keys in the repo. Use repository or Codespaces secrets.
+    apiKey: "${DEEPSEEK_CODER_API_KEY}"
+  - name: DeepSeek Chat
+    provider: deepseek
+    model: deepseek-chat
+    # DO NOT store real API keys in the repo. Use repository or Codespaces secrets.
+    apiKey: "${DEEPSEEK_CHAT_API_KEY}"
