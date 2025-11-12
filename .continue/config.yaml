@@ -3,18 +3,21 @@ version: "1.0.0"
 schema: "v1"
 
 models:
-  - title: "DeepSeek Coder"
+  - name: "DeepSeek Coder"
     model: "deepseek-coder"
-    contextLength: 128000
-    apiKey: "${DEEPSEEK_API_KEY}"
     provider: "deepseek"
-    systemMessage: "You are an expert programming assistant"
+    apiKey: "${DEEPSEEK_API_KEY}"
+    defaultCompletionOptions:
+      contextLength: 128000
+    chatOptions:
+      baseSystemMessage: "You are an expert programming assistant"
 
-  - title: "DeepSeek Chat" 
+  - name: "DeepSeek Chat"
     model: "deepseek-chat"
-    contextLength: 128000
-    apiKey: "${DEEPSEEK_API_KEY}"
     provider: "deepseek"
+    apiKey: "${DEEPSEEK_API_KEY}"
+    defaultCompletionOptions:
+      contextLength: 128000
 
 mcpServers:
   - uses: "anthropic/memory-mcp"
