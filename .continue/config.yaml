@@ -1,27 +1,36 @@
-name: "My Global Continue Config"
-version: "1.0.0"
-schema: "v1"
+name: Global Continue Config
+version: 1.0.0
+schema: v1
 
+# Define which models can be used
+# https://docs.continue.dev/customization/models
 models:
-  # Using local ollama or remote API (OpenAI compatible)
-  # For DeepSeek: pull ollama deepseek-r1, or configure OpenAI-compatible endpoint
-  - name: "DeepSeek R1"
-    model: "deepseek-r1"
-    apiBase: "http://localhost:11434/v1"  # Change for remote DeepSeek API
-    apiKey: "${DEEPSEEK_API_KEY}"
-    defaultCompletionOptions:
-      contextLength: 128000
+  - name: DeepSeek Coder
+    provider: openai
+    model: deepseek-coder
+    apiKey: ${{ secrets.DEEPSEEK_API_KEY }}
+    apiBase: https://api.deepseek.com/v1
 
-  - name: "GPT-4o Mini"
-    model: "gpt-4o-mini"
-    apiKey: "${OPENAI_API_KEY}"
-    defaultCompletionOptions:
-      contextLength: 128000
-      temperature: 0.7
+  - name: DeepSeek Chat
+    provider: openai
+    model: deepseek-chat
+    apiKey: ${{ secrets.DEEPSEEK_API_KEY }}
+    apiBase: https://api.deepseek.com/v1
 
+  - uses: ollama/deepseek-r1
+  - uses: ollama/qwen2.5-coder-1.5b
+  - uses: anthropic/claude-3-5-sonnet
+    with:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  - uses: openai/gpt-4o
+    with:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+# MCP Servers that Continue can access
+# https://docs.continue.dev/customization/mcp-tools
 mcpServers:
-  - uses: "anthropic/memory-mcp"
+  - uses: anthropic/memory-mcp
 
 ui:
   fontSize: 14
-  theme: "dark"
+  theme: dark
