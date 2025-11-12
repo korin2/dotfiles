@@ -1,0 +1,27 @@
+{
+
+ "models": [
+
+   {
+     "title": "DeepSeek",
+     "provider": "openai",
+     "model": "deepseek-chat",
+     "apiBase": "https://api.deepseek.com/v1",
+     "apiKey": "${config:continue.DEEPSEEK_API_KEY}"
+
+   }
+
+ ],
+ "tabAutocompleteModel": {
+   "title": "DeepSeek Coder",
+   "provider": "openai",  
+   "model": "deepseek-coder",
+   "apiBase": "https://api.deepseek.com/v1",
+   "apiKey": "${config:continue.DEEPSEEK_API_KEY}"
+
+  }
+  ]
+}
+
+
+
