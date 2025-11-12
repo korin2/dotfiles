@@ -17,15 +17,6 @@ models:
     apiKey: ${{ secrets.DEEPSEEK_API_KEY }}
     apiBase: https://api.deepseek.com/v1
 
-  - uses: ollama/deepseek-r1
-  - uses: ollama/qwen2.5-coder-1.5b
-  - uses: anthropic/claude-3-5-sonnet
-    with:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-  - uses: openai/gpt-4o
-    with:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
 # MCP Servers that Continue can access
 # https://docs.continue.dev/customization/mcp-tools
 mcpServers:
