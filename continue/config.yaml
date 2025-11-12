@@ -1,0 +1,24 @@
+name: "My Global Continue Config"
+version: "1.0.0"
+schema: "v1"
+
+models:
+  - title: "DeepSeek Coder"
+    model: "deepseek-coder"
+    contextLength: 128000
+    apiKey: "${DEEPSEEK_API_KEY}"
+    provider: "deepseek"
+    systemMessage: "You are an expert programming assistant"
+
+  - title: "DeepSeek Chat" 
+    model: "deepseek-chat"
+    contextLength: 128000
+    apiKey: "${DEEPSEEK_API_KEY}"
+    provider: "deepseek"
+
+mcpServers:
+  - uses: "anthropic/memory-mcp"
+
+ui:
+  fontSize: 14
+  theme: "dark"
