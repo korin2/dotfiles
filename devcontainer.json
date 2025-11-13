@@ -1,9 +1,0 @@
-{
-      "name": "My Container",
-      "features": {},
-      "runArgs": [],
-      "containerEnv": {
-        "DEEPSEEK_CODER_API_KEY": "${{ secrets.DEEPSEEK_CODER_API_KEY }}",
-        "DEEPSEEK_CHAT_API_KEY": "${{ secrets.DEEPSEEK_CHAT_API_KEY }}"
-      }
-    }
